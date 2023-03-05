@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <h1 class="gameTitle">Tic Tac Toe</h1>
+      <div class="start-game">
+        <h2 class="text-light">Select Character</h1>
+        <div class="gameMode">
+          <div class="sets-options-chooses-disable" id="humvscomp">
+          <h2 class="btn" id="human">human</h2>  
+          <h1 class="vs">vs</h1>
+          <h2 class="btn"  id="computer">computer</h2>   
+          </div>   
+       </div>   
+      </div>
+      <div class="changeChar">
+      <h2 class="btn" id="1">X</h2> 
+      <h1 class="vs">vs</h1>
+      <h2 class="btn" id="2">O</h2>
+    </div> 
+      </div>
+      <div class="content">
+        <!-- <h2> Select Your Pick</h2> -->
+          <table class="table_overlay">
+          <tr>
+            <td id="square_1_text" class="text"></td>
+            <td id="square_2_text" class="text"></td>
+            <td id="square_3_text" class="text"></td>
+          </tr>
+          <tr>
+             <td id="square_4_text" class="text"></td>
+             <td id="square_5_text" class="text"></td>
+             <td id="square_6_text" class="text"></td>
+          </tr>
+          <tr>
+             <td id="square_7_text" class="text"></td>
+             <td id="square_8_text" class="text"></td>
+             <td id="square_9_text" class="text"></td>
+          </tr>
+        </table>
+      <div class="board">
+        <table>
+          <tr>
+            <td id="square_1"></td>
+       
+             <td id="square_2"></td>
+      
+             <td id="square_3"></td>
+          </tr>
+          <tr>
+             <td id="square_4"></td>
+             <td id="square_5"></td>
+             <td id="square_6"></td>
+          </tr>
+          <tr>
+             <td id="square_7"></td>
+             <td id="square_8"></td>
+             <td id="square_9"></td>
+          </tr>
+        </table> 
+      </div>
+        
+      
+      </div>
+      <div class="undo">
+        <h1 class="btn">«</h1>
+      </div>
+      <div id="myModal" class="modal animated fadeIn">
+      
+        <!-- Modal content -->
+        <div class="modal-content">
+           <div class="modal-header">
+          <h2>Game Over</h2>
+        </div>
+          <div class="modal-body">
+          <p class="modal_text"></p>
+            <btn id="restartBtn">Play again?</btn>
+          </div>
+        </div>
+      
+      </div>   
+    <script src="game.js"></script>
+  </body>
+</html>

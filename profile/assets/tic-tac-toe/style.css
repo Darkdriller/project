@@ -1,0 +1,167 @@
+
+
+body{
+  background: #3A1C71;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-color:#FDFDFE;
+  font-size:16px;
+  font-family:'Source Code Pro'
+}
+.primary-btn{
+  border: none;
+  background:#816df2 ;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #e9e9e9;
+  margin-top: 2em;
+  font-size: 0.5em;
+  cursor: pointer;
+}
+.start-game.hide{
+  display: none;
+}
+.start-game{
+  cursor: pointer;
+}
+.start-game{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(49, 49, 49, 0.938);
+  z-index: 2;
+}
+.btn {
+  cursor:pointer;
+  transition: all .2s ease-in-out;
+}
+.btn:hover {
+  transform:rotate(3deg) scale(1.3);
+}
+h1{
+  color: white;
+  font-family: 'Finger Paint', cursive;
+  text-align: center;
+}
+h2{
+  color: white;
+  font-family: 'Finger Paint', cursive;
+  text-align: center;
+  display: block;
+}
+td {
+  background-color:white;
+  border-radius:25%;
+  opacity:.2;
+  width:50px;
+  height:50px;
+  text-align:center;
+  font-family: 'Roboto', sans-serif;
+  color:white;
+}
+.text{
+    color: white;
+    opacity: 1;
+    /* z-index: 2; */
+    background-color: transparent;
+    border: none; 
+}
+.changeChar{
+  width:100%;
+  display:inline-flex;
+  flex-direction:row;
+  justify-content:center;
+}
+td:hover{
+  opacity:0.4;
+}
+.vs{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.content{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display:block;
+}
+
+table{
+  width:300px;
+  height:300px;
+}
+
+.table_overlay{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width:300px;
+  height:300px;
+}
+
+.modal {
+    display:none;/* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+  
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 0px;
+  border-radius:10px;
+  width: 400px;
+  height:200px;
+  font-size:17px;
+  text-align:center;
+  font-family:'Montserrat', sans-serif;;
+}
+
+.modal-header {
+  padding: 2px;
+  border-radius:10px 10px 0 0;
+}
+
+.modal-body{
+  top: -10px;
+  position: relative;
+}
+
+btn{
+  position: relative;
+  top: 10px;
+  border-radius:7px;
+  padding:10px;
+  margin-top:10px;
+  color:white;
+  background-color:#EF798A;
+  cursor:pointer;
+}
+
+btn:hover{
+  background-color:#CC4C5E;
+}
+.undo{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+}
