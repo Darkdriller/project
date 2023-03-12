@@ -160,8 +160,11 @@ function handleClick(row, col) {
           if (checkWin(1)) {
               endgame(1);
           }
+          else{
           console.log('making Comp Move')
           computerMove()
+        }
+          
 
       } else {
           document.querySelector(squareId + '_text').textContent='O'
@@ -169,9 +172,11 @@ function handleClick(row, col) {
           if (checkWin(2)) {
               endgame(2);
           }
-          console.log('making Comp Move')
-
-          computerMove()
+          else{
+            console.log('making Comp Move')
+            computerMove()
+          }
+          
       }
     }
   }

@@ -10,6 +10,8 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -63,7 +65,10 @@
                     <h2 class="mb-5">Projects</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0"><a class="black"href="assets/tic-tac-toe/index.html">Tic Tac Toe Game</a></h3>
+                            <h3 class="mb-0"><a class="black"href="assets/tic-tac-toe/index.html" onmouseover="playVideo('video-preview2')" onmouseout="pauseVideo('video-preview2')"">Tic Tac Toe Game</a></h3>
+                            <video id="video-preview2" style="display:none;" width="320" height="240" loop>
+                                <source src="assets/img/tic-tac-toe.mp4" type="video/mp4">
+                            </video>
                             <div class="subheading mb-3">Html, Vanilla Js, Css</div>
                             <p>
                                 It is an Tic Tac Toe game implemented using vanilla Javascript and Html along with Css.
@@ -74,8 +79,8 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0"><a class="black" href="assets/wordle/index.html" onmouseover="playVideo('video-preview')" onmouseout="pauseVideo('video-preview')"">Wordle</a></h3>
-                            <video id="video-preview" style="display:none;" width="320" height="240" loop>
+                            <h3 class="mb-0"><a class="black" href="assets/wordle/index.html" onmouseover="playVideo('video-preview1')" onmouseout="pauseVideo('video-preview1')"">Wordle</a></h3>
+                            <video id="video-preview1" style="display:none;" width="320" height="240" loop>
                                 <source src="assets/img/wordle.mp4" type="video/mp4">
                             </video>
                             <div class="subheading mb-3">Html, Vanilla Js, Css</div>
@@ -87,7 +92,7 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0"><a class="black"href="assets/photo/index.html">Photo Album Beta Not finished</a></h3>
+                            <h3 class="mb-0"><a class="black"href="assets/photo/index.html">Photo Album</a></h3>
                             <div class="subheading mb-3">Html, Vanilla Js, Css</div>
                             <p>
                                 Photo album in html css and vanilla js coming soon
@@ -138,6 +143,58 @@
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
+                        <div class="skills__container container grid">
+                            <div>
+                                 <!--==================== SKILL-1 ====================-->
+                                <div class="skills__content skills__open">
+                                    <div class="skills__header">
+                                        <i class="uil uil-analytics skills__icon"></i>
+                                       <div>
+                                           <h1 class="skills__title">Programming</h1>
+                                           <span class="skills__subtitle">More than 5 years</span>
+                                       </div>
+        
+                                       <i class="uil uil-angle-down skills__arrow"></i>
+                                    </div>
+                                    <div class="skills__list grid">
+                                        <div class="skills__data">
+                                            <div class="skills__titles">
+                                                <h3 class="skills__name">Python</h3>
+                                                <span class="skills__number">80%</span>
+                                            </div>
+                                            <div class="skills__bar">
+                                                <span class="skills__percentage skills__python"></span>
+                                            </div>
+                                        </div>
+                                       <div class="skills__data">
+                                           <div class="skills__titles">
+                                               <h3 class="skills__name">Java Script</h3>
+                                               <span class="skills__number">80%</span>
+                                           </div>
+                                           <div class="skills__bar">
+                                               <span class="skills__percentage skills__tab"></span>
+                                           </div>
+                                       </div>
+                                       <div class="skills__data">
+                                           <div class="skills__titles">
+                                               <h3 class="skills__name">Database(MySQL|MogoDb|MariaDb|Azure)</h3>
+                                               <span class="skills__number">90%</span>
+                                           </div>
+                                           <div class="skills__bar">
+                                               <span class="skills__percentage skills__sql"></span>
+                                           </div>
+                                       </div>
+                                       <div class="skills__data">
+                                           <div class="skills__titles">
+                                               <h3 class="skills__name">Java</h3>
+                                               <span class="skills__number">50%</span>
+                                           </div>
+                                           <div class="skills__bar">
+                                               <span class="skills__percentage skills__java"></span>
+                                           </div>
+                                       </div>
+                                    </div>
+                                </div>
                 </div>
             </section>
             <hr class="m-0" />
