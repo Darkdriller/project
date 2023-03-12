@@ -11451,20 +11451,20 @@ section.resume-section .resume-section-content {
 .skills__icon,
 .skills__arrow {
   font-size: 2rem;
-  color: var(--first-color);
+  color: hsl(190, 69%, 61%);
 }
 
 .skills__icon {
-  margin-right: var(--mb-0-75);
+  margin-right: 0.75rem;
 }
 
 .skills__title {
-  font-size: var(--h3-font-size);
+  font-size: 1.25rem;
 }
 
 .skills__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
+  font-size: 0.875rem;
+  color: hsl(190, 8%, 65%);
 }
 
 .skills__arrow {
@@ -11480,12 +11480,12 @@ section.resume-section .resume-section-content {
 .skills__titles {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--mb-0-5);
+  margin-bottom: 0.5rem;
 }
 
 .skills__name {
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
+  font-size: 0.938rem;
+  font-weight: 500;
 }
 
 .skills__bar,
@@ -11495,12 +11495,12 @@ section.resume-section .resume-section-content {
 }
 
 .skills__bar {
-  background-color: var(--first-color-lighter);
+  background-color: hsl(190, 92%, 85%);
 }
 
 .skills__percentage {
   display: block;
-  background-color: var(--first-color);
+  background-color: hsl(190, 69%, 61%);
 }
 
 .skills__html {
@@ -11558,7 +11558,7 @@ section.resume-section .resume-section-content {
 
 .skills__open .skills__list {
   height: max-content;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: 2.5rem;
 }
 
 .skills__open .skills__arrow {
