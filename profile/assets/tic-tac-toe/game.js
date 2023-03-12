@@ -10,6 +10,8 @@ var player = 1;
 var gameWon = 0;
 var startPlayer=1;
 var moves=[]
+var humanPlayer=1;
+var aiPlayer=2;
 
 // var gameMode=document.querySelectorAll(".start-game")
 // gameMode.addEventListener("click",(event)=>{
@@ -48,8 +50,10 @@ changeChar.addEventListener("click",(event)=>{
   console.log(event)
   if (event.target.className==="btn"){
     if (event.target.id!=startPlayer){
+      aiPlayer=startPlayer
+      humanPlayer=event.target.id
       restart(parseInt(event.target.id))
-      console.log(startPlayer,player,parseInt(event.target.id))
+      console.log(startPlayer,player,parseInt(event.target.id),"aiplayer: ",aiPlayer," human player: ", humanPlayer)
   }
   }
   
@@ -68,7 +72,65 @@ function undo(){
     grid[row][col]=null
     player=player=== 1 ? 2:1
 }
+// function handleClick(row, col) {
+//   if(playerType==="human"){
+//     if (checkLegalMove(row, col)) {
+//         const squareId = '#square_' + ((row * 3) + col + 1);
+//         if (player === 1) {
+//             document.querySelector(squareId + '_text').textContent='X'
+//             updateGrid(row, col, 1);
+//             if (checkWin(1)) {
+//                 endgame(1);
+//             }
+//             player = 2;
+//         } else {
+//             document.querySelector(squareId + '_text').textContent='O'
+//             updateGrid(row, col, 2);
+//             if (checkWin(2)) {
+//                 endgame(2);
+//             }
+//             player = 1;
+//         }
+//     }
+//   }
+//   else{
+//     if (checkLegalMove(row, col)) {
+//       const squareId = '#square_' + ((row * 3) + col + 1);
+//       if (humanPlayer === 1) {
+//           console.log(squareId)
+//           document.querySelector(squareId + '_text').textContent='X'
+//           updateGrid(row, col, 1);
+//           if (checkWin(1)) {
+//               endgame(1);
+//           }
+//           moves=makeAiMove()
+//           const squareId = '#square_' + ((moves.row * 3) +moves.col + 1);
+//           document.querySelector(squareId + '_text').textContent='O'
+//           updateGrid(row, col, 2);
+//           if (checkWin(2)) {
+//             endgame(2);
+//         }
+
+//       } else {
+//           document.querySelector(squareId + '_text').textContent='O'
+//           updateGrid(row, col, 2);
+//           if (checkWin(2)) {
+//               endgame(2);
+//           }
+//           moves=makeAiMove()
+//           const squareId = '#square_' + ((moves.row * 3) +moves.col + 1);
+//           document.querySelector(squareId + '_text').textContent='X'
+//           updateGrid(row, col, 1);
+//           if (checkWin(1)) {
+//             endgame(1);
+//         }
+//       }
+//   }
+// }
+// }
+
 function handleClick(row, col) {
+  if(playerType==="human"){
     if (checkLegalMove(row, col)) {
         const squareId = '#square_' + ((row * 3) + col + 1);
         if (player === 1) {
@@ -87,7 +149,34 @@ function handleClick(row, col) {
             player = 1;
         }
     }
+  }
+  else{
+    if (checkLegalMove(row, col)) {
+      const squareId = '#square_' + ((row * 3) + col + 1);
+      if (humanPlayer === 1) {
+          console.log(squareId)
+          document.querySelector(squareId + '_text').textContent='X'
+          updateGrid(row, col, 1);
+          if (checkWin(1)) {
+              endgame(1);
+          }
+          console.log('making Comp Move')
+          computerMove()
+
+      } else {
+          document.querySelector(squareId + '_text').textContent='O'
+          updateGrid(row, col, 2);
+          if (checkWin(2)) {
+              endgame(2);
+          }
+          console.log('making Comp Move')
+
+          computerMove()
+      }
+    }
+  }
 }
+
 
 
 
@@ -116,7 +205,6 @@ function checkWin(playerNum) {
      console.log("diagonal won");
     return true;
   }
-
   var tieGame = true;
   for (var i = 0; i < 3; i++) {
     for (var x = 0; x < 3; x++) {
@@ -148,43 +236,49 @@ function endgame(num) {
     document.querySelector("#myModal").style.display='block'
   }
   if (num == 1) {
-    document.querySelector(".modal_text").textContent="Player 1 Wins!"
+    document.querySelector(".modal_text").textContent="Player X Wins!"
     document.querySelector("#myModal").style.display='block'
   }
   if (num == 2) {
-    document.querySelector(".modal_text").textContent="Player 2 Wins!"
+    document.querySelector(".modal_text").textContent="Player O Wins!"
     document.querySelector("#myModal").style.display='block'
   }
 }
-
 function computerMove() {
   var availableMoves = [];
   for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
-          if (grid[i][j] === null) {
+          if (grid[i][j] == null) {
               availableMoves.push([i, j]);
           }
       }
   }
+  console.log(availableMoves)
   if (availableMoves.length > 0) {
       var randomIndex = Math.floor(Math.random() * availableMoves.length);
       var [row, col] = availableMoves[randomIndex];
-      updateGrid(row, col, 2);
-      document.querySelector(`#cell-${row}-${col}`).innerHTML = 'O';
-      player = 1;
-      if (checkWin(2)) {
-          endgame(2);
+      updateGrid(row, col, aiPlayer);
+      console.log(row,col)
+      const squareId = '#square_' + ((row * 3) + col + 1)+"_text";
+      if (aiPlayer===1){
+        document.querySelector(squareId).innerHTML = 'X';
+      }
+      else{
+        document.querySelector(squareId).innerHTML = 'O';
+      }
+      if (checkWin(aiPlayer)) {
+          endgame(aiPlayer);
       } else if (availableMoves.length === 0) {
           endgame(0);
       }
   }
 }
-function restart(player){
-  grid = new Array(3);
+function restart(Splayer){
+    grid = new Array(3);
     grid[0] = new Array(3);
     grid[1] = new Array(3);
     grid[2] = new Array(3);
-    startPlayer = player;
+    startPlayer = Splayer;
     player = startPlayer
     gameWon = 0;
     for (let row = 0; row < 3; row++) {
@@ -201,3 +295,66 @@ document.querySelector("#restartBtn").addEventListener("click", ()=>{
   console.log(startPlayer)
   restart(startPlayer)
 });
+
+
+function makeAiMove() {
+  var bestScore = -Infinity;
+  var move;
+
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      // Check if the spot is available
+      if (grid[i][j] == null) {
+        grid[i][j] = aiPlayer;
+        var score = minimax(grid, 0, false);
+        grid[i][j] = null;
+        if (score > bestScore) {
+          bestScore = score;
+          move = { row: i, col: j };
+        }
+      }
+    }
+  }
+  console.log()
+  return move
+}
+
+function minimax(grid, depth, isMaximizing) {
+  if (checkWin(humanPlayer)) {
+    return -10 + depth;
+  } else if (checkWin(aiPlayer)) {
+    return 10 - depth;
+  } else if (isBoardFull()) {
+    return 0;
+  }
+
+  if (isMaximizing) {
+    var bestScore = -Infinity;
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < 3; j++) {
+        // Check if the spot is available
+        if (grid[i][j] === null) {
+          grid[i][j] = aiPlayer;
+          var score = minimax(grid, depth + 1, false);
+          grid[i][j] = null;
+          bestScore = Math.max(score, bestScore);
+        }
+      }
+    }
+    return bestScore;
+  } else {
+    var bestScore = Infinity;
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < 3; j++) {
+        // Check if the spot is available
+        if (grid[i][j] == null) {
+          grid[i][j] = humanPlayer;
+          var score = minimax(grid, depth + 1, true);
+          grid[i][j] = null;
+          bestScore = Math.min(score, bestScore);
+        }
+      }
+    }
+    return bestScore;
+  }
+}
