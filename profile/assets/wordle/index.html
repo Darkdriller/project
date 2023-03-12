@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wordle~DJS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  </head>
+  <body>
+    <div class="notification"></div>
+
+    <div class="wrapper">
+      <div class="header">
+        <ul>
+        <li class="left">
+                <span class="back">Back</span>
+              </li>
+          <li>
+            <h1 class="heading">Wordle ~ DJS</h1>
+          </li>
+        </ul>
+      </div>
+
+      <div class="char-grid">
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+
+        <div class="letter-row">
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+          <div class="letter-box"></div>
+        </div>
+      </div>
+
+      <div class="keyboard">
+        <div class="key-row">
+          <div data-key="q" class="key-btn">Q</div>
+          <div data-key="w" class="key-btn">W</div>
+          <div data-key="e" class="key-btn">E</div>
+          <div data-key="r" class="key-btn">R</div>
+          <div data-key="t" class="key-btn">T</div>
+          <div data-key="y" class="key-btn">Y</div>
+          <div data-key="u" class="key-btn">U</div>
+          <div data-key="i" class="key-btn">I</div>
+          <div data-key="o" class="key-btn">O</div>
+          <div data-key="p" class="key-btn">P</div>
+        </div>
+
+        <div class="key-row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div data-key="a" class="key-btn">A</div>
+          <div data-key="s" class="key-btn">S</div>
+          <div data-key="d" class="key-btn">D</div>
+          <div data-key="f" class="key-btn">F</div>
+          <div data-key="g" class="key-btn">G</div>
+          <div data-key="h" class="key-btn">H</div>
+          <div data-key="j" class="key-btn">J</div>
+          <div data-key="k" class="key-btn">K</div>
+          <div data-key="l" class="key-btn">L</div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div class="key-row">
+          <div data-key="↵" class="key-btn one-and-half">ENTER</div>
+          <div data-key="z" class="key-btn">Z</div>
+          <div data-key="x" class="key-btn">X</div>
+          <div data-key="c" class="key-btn">C</div>
+          <div data-key="v" class="key-btn">V</div>
+          <div data-key="b" class="key-btn">B</div>
+          <div data-key="n" class="key-btn">N</div>
+          <div data-key="m" class="key-btn">M</div>
+          <div data-key="←" class="key-btn one-and-half">DEL</div>
+        </div>
+      </div>
+    </div>
+    <div class="endgame"></div>
+    <script src="game.js"></script>
+  </body>
+</html>

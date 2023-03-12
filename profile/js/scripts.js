@@ -6,7 +6,17 @@
 //
 // Scripts
 // 
-
+function playVideo(id) {
+    const video = document.getElementById(id);
+    video.style.display = 'block';
+    video.play();
+  }
+  
+  function pauseVideo(id) {
+    const video = document.getElementById(id);
+    video.pause();
+    video.style.display = 'none';
+  }
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
